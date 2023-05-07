@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_test_task_tweets=self.webpackChunkgoit_test_task_tweets||[]).push([[544],{544:function(e,t,s){s.r(t),s.d(t,{default:function(){return u}});var n=s(184);function u(){return(0,n.jsx)("div",{children:(0,n.jsx)("h1",{children:"Welcome. Nice to meet you here.) You can see here a lot of tweets"})})}}}]);
+//# sourceMappingURL=544.fb5e8489.chunk.js.map
