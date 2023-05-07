@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/goit-test-task-tweets/static/css/main.073c9b0a.css",
-    "main.js": "/goit-test-task-tweets/static/js/main.3c3b935a.js",
+    "main.js": "/goit-test-task-tweets/static/js/main.49f7f1ee.js",
     "static/js/544.fb5e8489.chunk.js": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js",
-    "static/js/492.e39035f5.chunk.js": "/goit-test-task-tweets/static/js/492.e39035f5.chunk.js",
+    "static/js/492.47ff8a14.chunk.js": "/goit-test-task-tweets/static/js/492.47ff8a14.chunk.js",
     "static/media/picture.png": "/goit-test-task-tweets/static/media/picture.92ac7be459c2a240dbba.png",
     "static/media/logo.svg": "/goit-test-task-tweets/static/media/logo.fd4ef749d37f796c02d5c218abefbc99.svg",
     "index.html": "/goit-test-task-tweets/index.html",
     "main.073c9b0a.css.map": "/goit-test-task-tweets/static/css/main.073c9b0a.css.map",
-    "main.3c3b935a.js.map": "/goit-test-task-tweets/static/js/main.3c3b935a.js.map",
+    "main.49f7f1ee.js.map": "/goit-test-task-tweets/static/js/main.49f7f1ee.js.map",
     "544.fb5e8489.chunk.js.map": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js.map",
-    "492.e39035f5.chunk.js.map": "/goit-test-task-tweets/static/js/492.e39035f5.chunk.js.map"
+    "492.47ff8a14.chunk.js.map": "/goit-test-task-tweets/static/js/492.47ff8a14.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.3c3b935a.js"
+    "static/js/main.49f7f1ee.js"
   ]
 }
