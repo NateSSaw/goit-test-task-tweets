@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/goit-test-task-tweets/static/css/main.073c9b0a.css",
-    "main.js": "/goit-test-task-tweets/static/js/main.49f7f1ee.js",
+    "main.css": "/goit-test-task-tweets/static/css/main.aeec99cf.css",
+    "main.js": "/goit-test-task-tweets/static/js/main.c8706fc6.js",
     "static/js/544.fb5e8489.chunk.js": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js",
-    "static/js/492.47ff8a14.chunk.js": "/goit-test-task-tweets/static/js/492.47ff8a14.chunk.js",
+    "static/css/404.d22ce398.chunk.css": "/goit-test-task-tweets/static/css/404.d22ce398.chunk.css",
+    "static/js/404.6fae3858.chunk.js": "/goit-test-task-tweets/static/js/404.6fae3858.chunk.js",
+    "static/js/817.6d50784f.chunk.js": "/goit-test-task-tweets/static/js/817.6d50784f.chunk.js",
     "static/media/picture.png": "/goit-test-task-tweets/static/media/picture.92ac7be459c2a240dbba.png",
     "static/media/logo.svg": "/goit-test-task-tweets/static/media/logo.fd4ef749d37f796c02d5c218abefbc99.svg",
     "index.html": "/goit-test-task-tweets/index.html",
-    "main.073c9b0a.css.map": "/goit-test-task-tweets/static/css/main.073c9b0a.css.map",
-    "main.49f7f1ee.js.map": "/goit-test-task-tweets/static/js/main.49f7f1ee.js.map",
+    "main.aeec99cf.css.map": "/goit-test-task-tweets/static/css/main.aeec99cf.css.map",
+    "main.c8706fc6.js.map": "/goit-test-task-tweets/static/js/main.c8706fc6.js.map",
     "544.fb5e8489.chunk.js.map": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js.map",
-    "492.47ff8a14.chunk.js.map": "/goit-test-task-tweets/static/js/492.47ff8a14.chunk.js.map"
+    "404.d22ce398.chunk.css.map": "/goit-test-task-tweets/static/css/404.d22ce398.chunk.css.map",
+    "404.6fae3858.chunk.js.map": "/goit-test-task-tweets/static/js/404.6fae3858.chunk.js.map",
+    "817.6d50784f.chunk.js.map": "/goit-test-task-tweets/static/js/817.6d50784f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.49f7f1ee.js"
+    "static/css/main.aeec99cf.css",
+    "static/js/main.c8706fc6.js"
   ]
 }
