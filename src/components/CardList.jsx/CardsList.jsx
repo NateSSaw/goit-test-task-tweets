@@ -1,48 +1,48 @@
-import { useEffect, useState } from "react";
-import api from "../../servises/api";
-import { Card } from "../Card/Card";
-import { Button } from "../Button/Button";
+import { useEffect, useState } from 'react';
+import api from '../../servises/api';
+import { Card } from '../Card/Card';
+import { Button } from '../Button/Button';
 
 export default function CardsList() {
   const [tweets, setTweets] = useState([]);
   const [page, setPage] = useState(1);
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
 
   useEffect(() => {
     setPage(1);
-    setStatus("pending");
+    setStatus('pending');
     api
       .getTweets()
-      .then((data) => {
+      .then(data => {
         if (data.length > 0) {
           setTweets(data);
-          setPage((prevPage) => prevPage + 1);
-          setStatus("resolved");
+          setPage(prevPage => prevPage + 1);
+          setStatus('resolved');
         } else return Promise.reject(new Error(`Didn't find tweets`));
       })
       .catch(({ message }) => {
         setError(message);
-        setStatus("rejected");
+        setStatus('rejected');
       });
   }, []);
 
   const onLoadMore = () => {
     api
       .getTweets(page)
-      .then((data) => {
+      .then(data => {
         if (data.length > 0) {
-          setTweets((prevState) => [...prevState, ...data]);
-          setPage((prevPage) => prevPage + 1);
+          setTweets(prevState => [...prevState, ...data]);
+          setPage(prevPage => prevPage + 1);
         } else return Promise.reject(new Error(`Didn't find more tweets`));
       })
       .catch(({ message }) => {
         setError(message);
-        setStatus("rejected");
+        setStatus('rejected');
       });
   };
-  if (status === "pending") return <p> Loadind...</p>;
-  if (status === "rejected")
+  if (status === 'pending') return <p> Loadind...</p>;
+  if (status === 'rejected')
     return (
       <div className="Error">
         <h2 className="title">{error}</h2>
@@ -55,11 +55,11 @@ export default function CardsList() {
         ;
       </div>
     );
-  if (status === "resolved")
+  if (status === 'resolved')
     return (
       <div>
         <ul>
-          <Card tweets={tweets} />
+          <Card tweets={tweets} setTweets={setTweets} />
         </ul>
 
         <Button onClick={onLoadMore} />
