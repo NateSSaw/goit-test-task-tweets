@@ -3,6 +3,7 @@ import { Card } from '../Card/Card';
 import { Button } from '../Button/Button';
 import * as API from '../../servises/api';
 import { useNavigate } from 'react-router-dom';
+import css from './CardsList.module.css';
 
 export default function CardsList() {
   const navigate = useNavigate();
@@ -47,13 +48,17 @@ export default function CardsList() {
 
   return (
     <div>
-      <button type="button" onClick={() => navigate('/')}>
+      <button
+        type="button"
+        className={css.btn_back}
+        onClick={() => navigate('/')}
+      >
         Back
       </button>
       <ul>
         <Card users={users} setUsers={setUsers} updateUser={updateUser} />
       </ul>
-      <Button onClick={onLoadMore} />
+      <Button onClick={onLoadMore} className={css.btn_load} />
     </div>
   );
 }
