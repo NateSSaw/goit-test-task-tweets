@@ -1,18 +1,13 @@
-function getTweets(page = 1) {
-  const url = 'https://6456da1e5f9a4f23614d2d7b.mockapi.io/tweets';
-  const options = 'limit=3';
-  return fetch(`${url}?page=${page}&${options}`).then(res => {
-    if (res.ok) return res.json();
-    else return Promise.reject(new Error('No response from server'));
-  });
-}
+import axios from 'axios';
 
-function updateUser() {
-  const url = 'https://6456da1e5f9a4f23614d2d7b.mockapi.io/tweets';
-}
+axios.defaults.baseURL = 'https://6456da1e5f9a4f23614d2d7b.mockapi.io';
 
-const api = {
-  getTweets,
+export const getUsers = async (page = 1) => {
+  const response = await axios.get(`/tweets?page=${page}&limite=3`);
+  return response.data;
 };
 
-export default api;
+export const updateUser = async user => {
+  const response = await axios.put(`/tweets/${user.id}`, user);
+  return response.data;
+};

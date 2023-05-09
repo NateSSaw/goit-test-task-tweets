@@ -4,11 +4,51 @@ import png from '../../picture.png';
 import css from './Card.module.css';
 import { useState } from 'react';
 
-export const Card = ({ tweets, setTweets }) => {
-  const [isfollowed, setIsFollowed] = useState(false);
-  const [button, setButton] = useState('Follow');
+export const Card = ({ users, setUsers, updateUser }) => {
+  const [user, setUser] = useState(users);
+  const handleFollow = e => {
+    e.currentTarget.classList.toggle(css.activeBtn);
+    const text = e.currentTarget.textContent;
+    if (text === 'Follow') {
+      e.currentTarget.textContent = 'Following';
+    }
+    if (text === 'Following') {
+      e.currentTarget.textContent = 'Follow';
+    }
 
-  return tweets.map(({ id, user, tweets, followers, avatar }) => {
+    const idUser = e.currentTarget.id;
+
+    setUsers(prevState =>
+      prevState.map(el =>
+        el.id === idUser
+          ? {
+              ...el,
+              followers:
+                text === 'Follow' ? el.followers + 1 : +(el.followers - 1),
+            }
+          : el
+      )
+    );
+    setUser(prevState =>
+      prevState.find(el => {
+        if (el.id === idUser) {
+          const userChanged = {
+            ...el,
+            followers:
+              text === 'Follow' ? el.followers + 1 : +(el.followers - 1),
+          };
+
+          return userChanged;
+        } else {
+          return el;
+        }
+      })
+    );
+    console.log(user);
+    updateUser(user);
+  };
+
+  return users.map(({ id, user, tweets, followers, avatar }) => {
     return (
       <li className={css.card} key={id}>
         <img src={logo} alt="logo" className={css.logo}></img>
@@ -30,8 +70,13 @@ export const Card = ({ tweets, setTweets }) => {
           <span>Followers</span>
         </p>
 
-        <button type="button" id={id} className={css.btn}>
-          {button}
+        <button
+          type="button"
+          id={id}
+          className={css.btn}
+          onClick={handleFollow}
+        >
+          Follow
         </button>
       </li>
     );
