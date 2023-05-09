@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/goit-test-task-tweets/static/css/main.aeec99cf.css",
-    "main.js": "/goit-test-task-tweets/static/js/main.c8706fc6.js",
+    "main.css": "/goit-test-task-tweets/static/css/main.09539bdb.css",
+    "main.js": "/goit-test-task-tweets/static/js/main.90767ec8.js",
     "static/js/544.fb5e8489.chunk.js": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js",
-    "static/css/404.d22ce398.chunk.css": "/goit-test-task-tweets/static/css/404.d22ce398.chunk.css",
-    "static/js/404.6fae3858.chunk.js": "/goit-test-task-tweets/static/js/404.6fae3858.chunk.js",
+    "static/css/639.d6513c6f.chunk.css": "/goit-test-task-tweets/static/css/639.d6513c6f.chunk.css",
+    "static/js/639.1fd44821.chunk.js": "/goit-test-task-tweets/static/js/639.1fd44821.chunk.js",
     "static/js/817.6d50784f.chunk.js": "/goit-test-task-tweets/static/js/817.6d50784f.chunk.js",
     "static/media/picture.png": "/goit-test-task-tweets/static/media/picture.92ac7be459c2a240dbba.png",
     "static/media/logo.svg": "/goit-test-task-tweets/static/media/logo.fd4ef749d37f796c02d5c218abefbc99.svg",
     "index.html": "/goit-test-task-tweets/index.html",
-    "main.aeec99cf.css.map": "/goit-test-task-tweets/static/css/main.aeec99cf.css.map",
-    "main.c8706fc6.js.map": "/goit-test-task-tweets/static/js/main.c8706fc6.js.map",
+    "main.09539bdb.css.map": "/goit-test-task-tweets/static/css/main.09539bdb.css.map",
+    "main.90767ec8.js.map": "/goit-test-task-tweets/static/js/main.90767ec8.js.map",
     "544.fb5e8489.chunk.js.map": "/goit-test-task-tweets/static/js/544.fb5e8489.chunk.js.map",
-    "404.d22ce398.chunk.css.map": "/goit-test-task-tweets/static/css/404.d22ce398.chunk.css.map",
-    "404.6fae3858.chunk.js.map": "/goit-test-task-tweets/static/js/404.6fae3858.chunk.js.map",
+    "639.d6513c6f.chunk.css.map": "/goit-test-task-tweets/static/css/639.d6513c6f.chunk.css.map",
+    "639.1fd44821.chunk.js.map": "/goit-test-task-tweets/static/js/639.1fd44821.chunk.js.map",
     "817.6d50784f.chunk.js.map": "/goit-test-task-tweets/static/js/817.6d50784f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aeec99cf.css",
-    "static/js/main.c8706fc6.js"
+    "static/css/main.09539bdb.css",
+    "static/js/main.90767ec8.js"
   ]
 }
