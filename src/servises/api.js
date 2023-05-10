@@ -7,7 +7,7 @@ export const getUsers = async (page = 1) => {
   return response.data;
 };
 
-export const updateUser = async user => {
-  const response = await axios.put(`/tweets/${user.id}`, user);
+export const updateUser = async (id, number) => {
+  const response = await axios.put(`/tweets/${id}`, { followers: number });
   return response.data;
 };

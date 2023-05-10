@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import logo from '../../logo.svg';
 import png from '../../picture.png';
 import css from './Card.module.css';
+import Logo from 'components/Logo/Logo';
 
 export const Card = ({ users, setUsers, updateUser }) => {
   const onHandleFollow = e => {
@@ -10,6 +10,7 @@ export const Card = ({ users, setUsers, updateUser }) => {
     buttonCurrent === 'Follow'
       ? (e.currentTarget.textContent = 'Following')
       : (e.currentTarget.textContent = 'Follow');
+
     const idUser = e.currentTarget.id;
     setUsers(prevState =>
       prevState.map(el =>
@@ -29,7 +30,11 @@ export const Card = ({ users, setUsers, updateUser }) => {
   return users.map(user => {
     return (
       <li className={css.card} key={user.id}>
-        <img src={logo} alt="logo" className={css.logo}></img>
+        <Logo
+          title="GoIT – платформа IT-курсів"
+          href="https://goit.global/ua/"
+          target="_blank"
+        />
         <img src={png} alt="messages" className={css.messages}></img>
         <div className={css.line}>
           <div className={css.circle}>
