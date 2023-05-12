@@ -73,16 +73,16 @@ export default function CardsList() {
     setCurrentPage(1);
   };
 
-  const defineMsg = () => {
-    switch (selectedValue) {
-      case filterOptions.follow:
-        return 'It seems you already follow everyone!';
-      case filterOptions.followings:
-        return 'No following users yet. Follow one!';
-      default:
-        return 'No users';
-    }
-  };
+  // const defineMsg = () => {
+  //   switch (selectedValue) {
+  //     case filterOptions.follow:
+  //       return 'It seems you already follow everyone!';
+  //     case filterOptions.followings:
+  //       return 'No following users yet. Follow one!';
+  //     default:
+  //       return 'No users';
+  //   }
+  // };
 
   const usersToRender = getCurrentPageUsers();
   const endOfTweets = filterUsers()?.length / cardsPerPage <= currentPage;

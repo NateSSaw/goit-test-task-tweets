@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import png from '../../picture.png';
 import css from './Card.module.css';
 import Logo from 'components/Logo/Logo';
-import defaultAvatar from './icon.png';
 import { useEffect, useState } from 'react';
 import { updatedUser } from 'servises/api';
 
 export default function Card({ user, getUsers }) {
-  const { tweets = 0, followers = 0, avatar = defaultAvatar } = user;
   const [isFollowing, setIsFollowing] = useState(false);
 
   useEffect(() => {
