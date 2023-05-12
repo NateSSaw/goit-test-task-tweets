@@ -1,53 +1,96 @@
-import { useEffect, useState } from 'react';
-import { Card } from '../Card/Card';
+import React, { useEffect, useRef, useState } from 'react';
+import Card from '../Card/Card';
 import { Button } from '../Button/Button';
 import * as API from '../../servises/api';
 import { useNavigate } from 'react-router-dom';
 import css from './CardsList.module.css';
+import Filter from 'components/Filter/Filter';
+
+const filterOptions = {
+  all: 'all',
+  follow: 'follow',
+  followings: 'followings',
+};
 
 export default function CardsList() {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
+  const [users, setUsers] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [error, setError] = useState(null);
+
+  const { current: cardsPerPage } = useRef(
+    window.innerWidth < 1200 && window.innerWidth >= 800 ? 4 : 3
+  );
 
   useEffect(() => {
-    async function getUsers() {
+    const fetchData = async () => {
       try {
         const data = await API.getUsers();
         setUsers(data);
-        setPage(prevPage => prevPage + 1);
       } catch (error) {
-        console.log(error);
+        setError('Oops something went wrong (');
       }
-    }
-    getUsers();
+    };
+    fetchData();
   }, []);
 
-  const updateUser = async user => {
+  const getUsers = async () => {
     try {
-      const updatedUser = await API.updateUser(user);
-      setUsers(prevState =>
-        prevState.map(el => (el.id === user.id ? updatedUser : user))
-      );
+      const users = await API.getUsers();
+      setUsers(users);
+      filterUsers();
     } catch (error) {
-      console.log(error);
+      setError('Oops something went wrong (');
     }
   };
-  const onLoadMore = () => {
-    async function getUsers() {
-      try {
-        const data = await API.getUsers(page);
-        setUsers(prevState => [...prevState, ...data]);
-        setPage(prevPage => prevPage + 1);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getUsers();
+  const onClick = () => {
+    setCurrentPage(state => state + 1);
   };
 
+  const getCurrentPageUsers = () => {
+    const endUserIndex = currentPage * cardsPerPage;
+    return filterUsers()?.slice(0, endUserIndex);
+  };
+
+  const filterUsers = () => {
+    const followingUsersId = JSON.parse(
+      localStorage.getItem('followingUsersId')
+    );
+
+    switch (selectedValue) {
+      case filterOptions.follow:
+        return users.filter(user => !followingUsersId.includes(user.id));
+      case filterOptions.followings:
+        return users.filter(user => followingUsersId.includes(user.id));
+      default:
+        return users;
+    }
+  };
+
+  const handleFollowBtnClick = ({ target }) => {
+    setSelectedValue(target.value);
+    setCurrentPage(1);
+  };
+
+  const defineMsg = () => {
+    switch (selectedValue) {
+      case filterOptions.follow:
+        return 'It seems you already follow everyone!';
+      case filterOptions.followings:
+        return 'No following users yet. Follow one!';
+      default:
+        return 'No users';
+    }
+  };
+
+  const usersToRender = getCurrentPageUsers();
+  const endOfTweets = filterUsers()?.length / cardsPerPage <= currentPage;
+
+  if (!currentPage) setCurrentPage(1);
+
   return (
-    <div>
+    <React.Fragment>
       <button
         type="button"
         className={css.btn_back}
@@ -55,10 +98,29 @@ export default function CardsList() {
       >
         Back
       </button>
-      <ul>
-        <Card users={users} setUsers={setUsers} updateUser={updateUser} />
-      </ul>
-      <Button onClick={onLoadMore} className={css.btn_load} />
-    </div>
+      {error && <p>{error}</p>}
+      {usersToRender && (
+        <div>
+          <Filter
+            handleFollowBtnClick={handleFollowBtnClick}
+            filterOptions={filterOptions}
+            selectedValue={selectedValue}
+          />
+          <ul>
+            {usersToRender?.map(user => (
+              <Card
+                key={user.id}
+                users={usersToRender}
+                user={user}
+                getUsers={getUsers}
+              />
+            ))}
+          </ul>
+          {!endOfTweets && (
+            <Button onClick={onClick} className={css.btn_load} />
+          )}
+        </div>
+      )}
+    </React.Fragment>
   );
 }
