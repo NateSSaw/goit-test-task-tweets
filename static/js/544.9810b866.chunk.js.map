@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/544.9810b866.chunk.js","mappings":"4LAAe,SAASA,IACtB,OACE,0BACE,4GAGL,C","sources":["pages/Home/Home.jsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div>\n      <h1>Welcome. Nice to meet you here.) You can see here a lot of tweets and followed</h1>\n    </div>\n  );\n}\n"],"names":["Home"],"sourceRoot":""}
